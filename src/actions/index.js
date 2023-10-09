@@ -20,3 +20,9 @@ export const deleteItem = (id) => ({
   type: "DELETE_ITEM",
   payload: id,
 });
+export const addHeroNew = (hero) => {
+  return {
+    type: "ADD_HERO",
+    hero,
+  };
+};

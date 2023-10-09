@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
 import { deleteItem } from "../../actions";
+import { addHeroNew } from "../../actions";
+import HeroesAddForm from "../heroesAddForm/HeroesAddForm";
 import {
   heroesFetching,
   heroesFetched,
@@ -62,15 +64,16 @@ const HeroesList = () => {
     if (arr.length === 0) {
       return <h5 className="text-center mt-5">Героев пока нет</h5>;
     }
+    <HeroesAddForm addHeroNew={addHeroNew} />;
 
-    return arr.map(({ id, ...props }) => {
+    return arr.map(({ ...props }, id) => {
       return (
         <HeroesListItem
           key={id}
-          id={id}
           {...props}
-          deleteItem={deleteItem}
+          deleteItem={deleteItem(id)}
           deleteHero={deleteHero}
+          // addItem={addHeroNew}
         />
       );
     });
