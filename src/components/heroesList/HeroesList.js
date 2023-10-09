@@ -68,10 +68,10 @@ const HeroesList = () => {
       return (
         <HeroesListItem
           key={id}
-          id={id}
           {...props}
-          deleteItem={deleteItem}
+          deleteItem={deleteItem(id)}
           deleteHero={deleteHero}
+          // addItem={addHeroNew}
         />
       );
     });

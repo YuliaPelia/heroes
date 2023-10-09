@@ -15,7 +15,6 @@ const HeroesListItem = ({
     deleteItem(id);
     deleteHero(id);
     console.log(id);
-
     console.log(name);
   };
   console.log(id);

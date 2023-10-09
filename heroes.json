@@ -19,10 +19,16 @@
       "element": "water"
     },
     {
-      "name": "Пелячик Юлія Тарасівна",
-      "text": "ауму",
-      "element": "fire",
+      "name": "Yellow",
+      "text": "dewhc",
+      "element": "wind",
       "id": 4
+    },
+    {
+      "name": "red",
+      "text": "cool",
+      "element": "earth",
+      "id": 5
     }
   ],
   "filters": [
