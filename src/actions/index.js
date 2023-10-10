@@ -26,3 +26,7 @@ export const addHero = (hero) => {
     payload: hero,
   };
 };
+export const setFilter = (filter) => ({
+  type: "SET_FILTER",
+  filter,
+});

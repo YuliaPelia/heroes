@@ -18,6 +18,8 @@ import Spinner from "../spinner/Spinner";
 
 const HeroesList = () => {
   const { heroes, heroesLoadingStatus } = useSelector((state) => state);
+  const activeFilter = useSelector((state) => state.filter);
+
   const dispatch = useDispatch();
   const { request } = useHttp();
 
@@ -33,6 +35,13 @@ const HeroesList = () => {
 
     // eslint-disable-next-line
   }, []);
+
+  const filteredHeroes = heroes.filter((hero) => {
+    if (activeFilter === "all") {
+      return true; // Відображати всіх героїв, якщо обраний фільтр - "Всі"
+    }
+    return hero.element === activeFilter;
+  });
 
   const deleteHero = async (id) => {
     try {
@@ -60,7 +69,7 @@ const HeroesList = () => {
   }
 
   const renderHeroesList = (arr) => {
-    if (arr.length === 0) {
+    if (!arr || arr.length === 0) {
       return <h5 className="text-center mt-5">Героев пока нет</h5>;
     }
 
@@ -77,7 +86,7 @@ const HeroesList = () => {
     });
   };
 
-  const elements = renderHeroesList(heroes);
+  const elements = renderHeroesList(filteredHeroes);
   return <ul>{elements}</ul>;
 };
 
