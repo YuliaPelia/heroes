@@ -23,7 +23,9 @@ const HeroesFilters = () => {
         <p className="card-text">Отфильтруйте героев по элементам</p>
         <div className="btn-group">
           <button
-            className={`btn btn-dark ${activeFilter === "all" ? "active" : ""}`}
+            className={`btn btn-dark  ${
+              activeFilter === "all" ? "active" : ""
+            }`}
             onClick={() => handleFilterClick("all")}
           >
             Все
